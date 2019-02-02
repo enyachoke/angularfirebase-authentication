@@ -12,6 +12,7 @@
     </div>
   </div>
 </form>
+
 <div class="no-data text-center">
   <button [disabled]="!checkinForm.valid" *ngIf="!checkedIn" (click)="toggleCheckin()" class="btn btn-success">
     <i class="fas fa-plus custom-fa-plus"></i>
@@ -23,3 +24,25 @@
   </button>
 
 </div>
+<h1>Student Checkins</h1>
+<!-- Showing checkins data -->
+<div class="table-responsive" *ngIf="studentCheckins">
+    <table class="table table-bordered table-responsive-sm table-responsive-md table-responsive-lg">
+      <thead>
+        <tr>
+          <th scope="col">Admission</th>
+          <th scope="col">Time</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- *ngFor loop iterates over checkin array and fetch the checkin's data -->
+        <!-- paginate pipe will add pagination in checkin's list, it won't show if items are less then 7 -->
+        <tr *ngFor="let checkin of studentCheckins | paginate: { itemsPerPage: 7, currentPage: p }; let i = index;">
+          <th scope="row">{{checkin.admissionNumber}}</th>
+          <td>{{checkin.firstName}} {{checkin.timestamp.toDate() | date}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <!-- Pagination -->
+  <pagination-controls (pageChange)="p = $event" autoHide="true" responsive="true"></pagination-controls>

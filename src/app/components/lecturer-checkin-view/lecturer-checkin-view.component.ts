@@ -16,6 +16,7 @@ export class LecturerCheckinViewComponent implements OnInit {
   _timeoutIds = {};
   public watchid;
   public checkinForm: FormGroup;
+  public studentCheckins;
   checkedIn = false;
   constructor(public crudApi: LecturerCheckinService,
     public studentCheckinService: StudentCheckinService,
@@ -43,6 +44,7 @@ getStudents() {
   const id = this.actRoute.snapshot.paramMap.get('id');
   this.crudApi.GetcheckinsStudentList(this.lecturerCheckin, id ).subscribe((values) => {
     console.log('Values', values);
+    this.studentCheckins = values;
   });
 }
   toggleCheckin() {
