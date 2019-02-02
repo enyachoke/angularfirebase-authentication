@@ -1,0 +1,42 @@
+<div class="pt-3 pb-2 mb-3 border-bottom">
+  <h1 class="h2">Add Checkin</h1>
+</div>
+
+<!-- checkin form -->
+<form [formGroup]="checkinForm" (ngSubmit)="submitcheckinData()" novalidate>
+  <div class="row">
+    <div class="col-lg-5 col-md-12 col-sm-12">
+      <div class="row">
+        <div class="col-md-12 mb-3">
+          <label>First name</label>
+          <input type="text" formControlName="firstName" class="form-control" required>
+          <p *ngIf="firstName.touched && firstName.invalid" class="error"><sup>*</sup>Please enter atleast first name</p>
+          <p *ngIf="firstName.errors?.minlength" class="error"><sup>*</sup>Name shouldn't be less than 2 words</p>
+        </div>
+        <div class="col-md-12 mb-3">
+          <label>Last name</label>
+          <input type="text" formControlName="lastName" class="form-control">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 mb-3">
+
+          <label>Lecture Class</label>
+          <input type="text" formControlName="className" class="form-control" required>
+          <p *ngIf="className.touched && className.invalid" class="error"><sup>*</sup>Set Class name</p>
+
+
+        </div>
+        <div class="col-md-12 mb-3">
+          <label>Radius</label>
+          <input type="text" formControlName="radius" class="form-control" required>
+          <p *ngIf="radius.touched && radius.invalid" class="error"><sup>*</sup>Provide Radus(M)</p>
+          <p *ngIf="radius.errors?.pattern" class="error"><sup>*</sup>Use numbers only
+            number</p>
+        </div>
+        <div class="form-group text-right">
+          <button type="button" class="btn btn-secondary gap-right" (click)="ResetForm()">Reset</button>
+          <button type="submit" class="btn btn-success" [disabled]="!checkinForm.valid">Add checkin</button>
+        </div>
+      </div>
+    </div>

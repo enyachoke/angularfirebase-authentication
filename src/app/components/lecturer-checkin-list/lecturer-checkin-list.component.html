@@ -1,0 +1,58 @@
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+  <h1 class="h2">checkins List</h1>
+  <!-- It won't show if there is no checkin data -->
+  <a routerLink="/add-lecturer-checkin" class="btn btn-success" *ngIf="hideWhenNocheckin">
+    <i class="fas fa-plus custom-fa-plus"></i>
+    Add Lecturer Checkin
+  </a>
+</div>
+
+<div class="pricing-header mx-auto">
+
+  <!-- Preloader shows before the data loads-->
+  <div class="no-data text-center" *ngIf="preLoader">
+    <img src="assets/preloader.gif" class="preloader-icon" alt="No checkin">
+  </div>
+
+  <!-- No data shows when their is no checkin data available -->
+  <div class="no-data text-center" *ngIf="noData">
+    <img src="assets/no-student.svg" class="nodata-msg" alt="No checkin">
+    <p class="nodata-msg">No checkin added yet!</p>
+    <a routerLink="/add-lecturer-checkin" class="btn btn-success">
+      <i class="fas fa-plus custom-fa-plus"></i>
+      Add checkin
+    </a>
+  </div>
+
+  <!-- Showing checkins data -->
+  <div class="table-responsive" *ngIf="hideWhenNocheckin">
+    <table class="table table-bordered table-responsive-sm table-responsive-md table-responsive-lg">
+      <thead>
+        <tr>
+          <th scope="col">Checkin Id</th>
+          <th scope="col">Lecturer name</th>
+          <th scope="col">Class Name</th>
+          <th scope="col">Geolocation Radius</th>
+          <th class="text-center" scope="col">Edit</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- *ngFor loop iterates over checkin array and fetch the checkin's data -->
+        <!-- paginate pipe will add pagination in checkin's list, it won't show if items are less then 7 -->
+        <tr *ngFor="let checkin of LecturerCheckin | paginate: { itemsPerPage: 7, currentPage: p }; let i = index;">
+          <th scope="row">{{checkin.$key}}</th>
+          <td>{{checkin.firstName}} {{checkin.lastName}}</td>
+          <td>{{checkin.className}}</td>
+          <td>{{checkin.radius}}</td>
+          <td class="text-center action-block">
+            <i class="far fa-edit" routerLink="/edit-lecturer-checkin/{{checkin.$key}}"></i>
+            <i class="far fa-eye" routerLink="/view-lecturer-checkin/{{checkin.$key}}"></i>
+            <i class="far fa-trash-alt" (click)="deletecheckin(checkin)"></i></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <!-- Pagination -->
+  <pagination-controls (pageChange)="p = $event" autoHide="true" responsive="true"></pagination-controls>
+
+</div>

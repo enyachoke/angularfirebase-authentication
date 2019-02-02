@@ -1,0 +1,25 @@
+<div *ngIf="lecturerCheckin" class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+  <h1 class="h2">Checkin to {{lecturerCheckin.className}} by {{lecturerCheckin.firstName}} {{lecturerCheckin.lastName}}
+  </h1>
+</div>
+<form *ngIf="!checkedIn" [formGroup]="checkinForm" (ngSubmit)="submitcheckinData()" novalidate>
+  <div class="row">
+    <div class="col-md-12 mb-3">
+      <label>Admission Number</label>
+      <input type="text" formControlName="admissionNumber" class="form-control" required>
+      <p *ngIf="admissionNumber.touched && admissionNumber.invalid" class="error"><sup>*</sup>Please enter your Admission Number to checkin</p>
+      <p *ngIf="admissionNumber.errors?.minlength" class="error"><sup>*</sup>Admission Number shouldn't be less than 2 words</p>
+    </div>
+  </div>
+</form>
+<div class="no-data text-center">
+  <button [disabled]="!checkinForm.valid" *ngIf="!checkedIn" (click)="toggleCheckin()" class="btn btn-success">
+    <i class="fas fa-plus custom-fa-plus"></i>
+    Checkin
+  </button>
+  <button *ngIf="checkedIn" (click)="toggleCheckin()" class="btn btn-danger">
+    <i class="fas fa-trash custom-fa-plus"></i>
+    Checkout
+  </button>
+
+</div>
