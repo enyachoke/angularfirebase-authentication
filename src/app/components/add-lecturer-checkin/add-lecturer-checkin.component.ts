@@ -22,11 +22,11 @@ export class AddLecturerCheckinComponent implements OnInit {
 
   ngOnInit() {
     this.crudApi.GetcheckinsList();  // Call GetcheckinsList() before main form is being called
-    this.studenForm();              // Call checkin form when component is ready
+    this.lecturerForm();              // Call checkin form when component is ready
   }
 
   // Reactive checkin form
-  studenForm() {
+  lecturerForm() {
     this.checkinForm = this.fb.group({
       firstName: ['', [Validators.required, Validators.minLength(2)]],
       lastName: [''],
@@ -64,7 +64,7 @@ export class AddLecturerCheckinComponent implements OnInit {
   }
 
   private getUserLocation() {
-    /// locate the user
+    /// locate the lecturer's  device(central device)
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(position => {
         console.log('Position', position);
