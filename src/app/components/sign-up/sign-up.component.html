@@ -8,15 +8,28 @@
     </div>
 
     <div class="authBlock">
-      <h3>Sign Up</h3>
+      <h3>Sign Up with Email</h3>
 
+       <div class="formGroup">
+        <input type="text" class="formControl" placeholder="User Id" #Uid required>
+      </div>
+      
       <div class="formGroup">
         <input type="email" class="formControl" placeholder="Email Address" #userEmail required>
+      </div>
+
+       <div class="formGroup">
+        <input type="text" class="formControl" placeholder="Enter Display name" #displayName required>
       </div>
 
       <div class="formGroup">
         <input type="password" class="formControl" placeholder="Password" #userPwd required>
       </div>
+
+      <div class="formGroup">
+        <input type="text" class="formControl" placeholder="Role" #userRole required>
+      </div>
+      
 
       <div class="formGroup">
         <input type="button" class="btn btnPrimary" value="Sign Up" (click)="authService.SignUp(userEmail.value, userPwd.value)">
