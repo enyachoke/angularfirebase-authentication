@@ -10,6 +10,8 @@ import { groupBy, mergeMap, toArray } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
+
+// we export the class to make it available for use by other components
 export class LecturerCheckinService {
   geo = geofirex.init(firebaseApp);
   checkinsRef: AngularFireList<any>;    // Reference to LecturerCheckin data list, its an Observable
