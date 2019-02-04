@@ -16,13 +16,15 @@ import { AddLecturerCheckinComponent } from '../../components/add-lecturer-check
 import { EditLecturerCheckinComponent } from '../../components/edit-lecturer-checkin/edit-lecturer-checkin.component';
 import { LecturerCheckinListComponent } from '../../components/lecturer-checkin-list/lecturer-checkin-list.component';
 import { LecturerCheckinViewComponent } from 'src/app/components/lecturer-checkin-view/lecturer-checkin-view.component';
+import { LogInComponent } from 'src/app/components/log-in/log-in.component';
 
 // Include route guard in routes array
 const routes: Routes = [
-  { path: '', redirectTo: '/sign-in', pathMatch: 'full'},
+  { path: '', redirectTo: '/register-user', pathMatch: 'full'},
   { path: 'sign-in', component: SignInComponent, canActivate: [SecureInnerPagesGuard]},
+  {path:  'log-in', component:LogInComponent, canActivate:[SecureInnerPagesGuard],},
   { path: 'register-user', component: SignUpComponent, canActivate: [SecureInnerPagesGuard]},
-  { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
+  { path: 'dashboard', component: DashboardComponent, canActivate: [SecureInnerPagesGuard] },
   { path: 'forgot-password', component: ForgotPasswordComponent, canActivate: [SecureInnerPagesGuard] },
   { path: 'verify-email-address', component: VerifyEmailComponent, canActivate: [SecureInnerPagesGuard] },
   { path: 'add-lecturer-checkin', component: AddLecturerCheckinComponent, canActivate: [SecureInnerPagesGuard] },

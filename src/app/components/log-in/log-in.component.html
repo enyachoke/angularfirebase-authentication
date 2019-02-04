@@ -11,18 +11,23 @@
     <div class="authBlock">
       <h3>Welcome Back</h3>
 
-       <div class="formGroup">
-        <input type="text" class="formControl" placeholder="Role" #roles required>
-      </div>
+       <!-- <div class="formGroup"><span>Enter your Role</span>
+
+        <input type="text" class="formControl" placeholder="Role" #roles required >
+      </div> -->
       
-      <div class="formGroup">
+      <div class="formGroup"><span>Enter your Email Address</span>
         <input type="email" class="formControl" placeholder="Email Address" #userEmail required>
       </div>
 
-      <div class="formGroup">
+      <div class="formGroup"><span>Enter your password</span>
         <input type="password" class="formControl" placeholder="Password" #userPwd required>
       </div>
 
       <div class="formGroup">
-        <input type="button" class="btn btnPrimary" value="Log in" (click)="authService.isLoggedIn()" class="redirect" routerLink="/view-lecturer-checkins">
+        <input type="button" class="btn btnPrimary" value="Log in" (click)="authService.SignIn(email, password)"class="redirect" routerLink="/dashboard">
+      </div>
+
+       <div class="formGroup">
+         <input type="button" class="btn btnPrimary" value="forgot password?" (click)="authService.ForgotPassword(passwordResetEmail)" class="redirect" routerLink="#">
       </div>

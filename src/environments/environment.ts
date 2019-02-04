@@ -5,12 +5,12 @@
 export const environment = {
   production: false,
   firebase: {
-    apiKey: 'AIzaSyA7V-3-rq73xGqtuyrcbXoijWCcmbJZpMg',
-    authDomain: 'classcheckin-a9792.firebaseapp.com',
-    databaseURL: 'https://classcheckin-a9792.firebaseio.com',
-    projectId: 'classcheckin-a9792',
-    storageBucket: 'classcheckin-a9792.appspot.com',
-    messagingSenderId: '917072491710'
+    apiKey: 'AIzaSyDovqc57TVnXqI6tFEQlJltnKI64HAMUyk',
+    authDomain: 'digital-attendance-syste-281bc.firebaseapp.com',
+    databaseURL: 'https://digital-attendance-syste-281bc.firebaseio.com',
+    projectId: 'digital-attendance-syste-281bc',
+    storageBucket: 'digital-attendance-syste-281bc.appspot.com',
+    messagingSenderId: '971432797765',
   }
 };
 
