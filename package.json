@@ -34,14 +34,22 @@
     "popper.js": "^1.14.7",
     "rxjs": "^6.4.0",
     "tslib": "^1.9.0",
+    "wijmo": "^5.20183.568",
     "zone.js": "^0.8.29"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^0.13.0",
+<<<<<<< HEAD
     "@angular/cli": "~7.3.0",
     "@angular/compiler-cli": "^7.2.3",
     "@angular/language-service": "~7.2.3",
     "@types/jasmine": "^2.8.16",
+=======
+    "@angular/cli": "~7.0.5",
+    "@angular/compiler-cli": "~7.0.0",
+    "@angular/language-service": "~7.0.0",
+    "@types/jasmine": "~2.8.8",
+>>>>>>> bf5ca41beedc9d6099f7c69b734492f631c2254e
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "~8.9.4",
     "codelyzer": "~4.5.0",

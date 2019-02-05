@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import * as firebase from 'firebase';
+import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
 
 const settings = {timestampsInSnapshots: true};
 const config = {
@@ -17,7 +18,12 @@ const config = {
   
 })
 export class AppComponent {
+<<<<<<< HEAD
   title = 'Digital Attendance System';
+=======
+  title = 'angular-lecture-checkin';
+  
+>>>>>>> bf5ca41beedc9d6099f7c69b734492f631c2254e
 
   ngOnInit() {
   firebase.initializeApp(config);
