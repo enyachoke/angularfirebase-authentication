@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+
+
 // Reactive Form
 import { ReactiveFormsModule } from '@angular/forms';
 
@@ -11,6 +13,7 @@ import { AppRoutingModule } from './shared/routing/app-routing.module';
 import { AppComponent } from './app.component';
 import { SignInComponent } from './components/sign-in/sign-in.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
+import { LogInComponent} from './components/log-in/log-in.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
@@ -33,6 +36,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { LecturerCheckinViewComponent } from './components/lecturer-checkin-view/lecturer-checkin-view.component';
+// import { LogInComponent } from './log-in/log-in.component';
+import { from } from 'rxjs';
+
 
 
 @NgModule({
@@ -46,7 +52,8 @@ import { LecturerCheckinViewComponent } from './components/lecturer-checkin-view
     AddLecturerCheckinComponent,
     EditLecturerCheckinComponent,
     LecturerCheckinListComponent,
-    LecturerCheckinViewComponent
+    LecturerCheckinViewComponent,
+    LogInComponent
   ],
   imports: [
     BrowserModule,
