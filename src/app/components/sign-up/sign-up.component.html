@@ -32,7 +32,7 @@
       
 
       <div class="formGroup">
-        <input type="button" class="btn btnPrimary" value="Sign Up" (click)="authService.SignUp(userEmail.value, userPwd.value)">
+        <input type="button" class="btn btnPrimary" value="Sign Up" (click)="authService.SignUp(userEmail.value, userPwd.value)" class="redirect" routerLink="/verify-email-address">
       </div>
 
       <div class="formGroup">

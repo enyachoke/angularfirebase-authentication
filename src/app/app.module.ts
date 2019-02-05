@@ -17,6 +17,8 @@ import { LogInComponent} from './components/log-in/log-in.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
+import { UserProfileComponent } from './components/user-profile/user-profile.component';
+
 
 // Firebase services + enviorment module
 import { AngularFireModule } from '@angular/fire';
@@ -24,7 +26,6 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from '../environments/environment'
 
-// Auth service
 import { AuthService } from './shared/services/auth.service';
 import { AddLecturerCheckinComponent } from './components/add-lecturer-checkin/add-lecturer-checkin.component';
 import { EditLecturerCheckinComponent } from './components/edit-lecturer-checkin/edit-lecturer-checkin.component';
@@ -41,6 +42,7 @@ import { from } from 'rxjs';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -53,7 +55,8 @@ import { from } from 'rxjs';
     EditLecturerCheckinComponent,
     LecturerCheckinListComponent,
     LecturerCheckinViewComponent,
-    LogInComponent
+    LogInComponent,
+    UserProfileComponent
   ],
   imports: [
     BrowserModule,
