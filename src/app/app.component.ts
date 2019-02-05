@@ -17,7 +17,7 @@ const config = {
   
 })
 export class AppComponent {
-  title = 'angular-lecture-checkin';
+  title = 'Digital Attendance System';
 
   ngOnInit() {
   firebase.initializeApp(config);
