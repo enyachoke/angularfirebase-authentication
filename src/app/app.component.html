@@ -1,3 +1,6 @@
+<!-- logo -->
+<img src="1.png " alt="LOGO UNAVAILABLE" width="200" height="200">
+
 <!-- Top navigation -->
 <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
     <a class="navbar-brand col-sm-3 col-md-2 mr-0" routerLink="/register-student">
@@ -5,13 +8,20 @@
     </a>
 </nav>
 
+
 <!-- Sidebar navigation -->
 <div class="container-fluid">
     <div class="row">
         <nav class="col-md-2 d-md-block bg-light sidebar">
             <div class="sidebar-sticky">
                 <ul class="nav flex-column">
-
+                       <!--to navigate to add students-->
+                    <li class="nav-item">
+                                <a class="nav-link" routerLink="/register-user" routerLinkActive="active">
+                                    <i class="fas fa-plus"></i>Student Registration
+                                </a>
+                            </li>
+        
                     <!-- routerLink="/register-student" to navigate to view-students component -->
                     <li class="nav-item">
                         <a class="nav-link" routerLink="/add-lecturer-checkin" routerLinkActive="active">

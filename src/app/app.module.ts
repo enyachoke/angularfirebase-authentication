@@ -19,7 +19,7 @@ import { VerifyEmailComponent } from './components/verify-email/verify-email.com
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
-import { environment } from '../environments/environment';
+import { environment } from '../environments/environment'
 
 // Auth service
 import { AuthService } from './shared/services/auth.service';
