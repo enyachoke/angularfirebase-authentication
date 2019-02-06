@@ -19,14 +19,10 @@ export class ReportsComponent implements OnInit {
 
 
   constructor( private router: Router,
-    public StudentCheckin,
-    public ReportsService) { }
+    public reportService:ReportsService) { }
 
-getAttendance(){
-   this.ReportsService.GetStudents();
-}
     ngOnInit(){ 
-      this.getAttendance();  
+      this.reportService.Getstudents();  
     }
     }
 
