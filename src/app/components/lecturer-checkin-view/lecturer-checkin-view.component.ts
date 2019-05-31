@@ -78,7 +78,7 @@ getStudents() {
   }
 
   watchPosition(callback, errorCallback, options) {
-    const throttleTime = (!options ? 0 : options.throttleTime || 0);
+    const throttleTime = (!options ? 0 : options.throttleTime || 20);
     const that2 = this;
     let bufferedArguments = null;
     let lastCall = null;
@@ -146,4 +146,6 @@ getStudents() {
     }); // Submit checkin data using CRUD API
   }
 
+ 
 }
+

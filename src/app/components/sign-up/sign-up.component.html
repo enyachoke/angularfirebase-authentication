@@ -8,10 +8,18 @@
     </div>
 
     <div class="authBlock">
-      <h3>Sign Up</h3>
+      <h3>Sign Up with Email</h3>
 
+       <div class="formGroup">
+        <input type="text" class="formControl" placeholder="User Id" #Uid required>
+      </div>
+      
       <div class="formGroup">
         <input type="email" class="formControl" placeholder="Email Address" #userEmail required>
+      </div>
+
+       <div class="formGroup">
+        <input type="text" class="formControl" placeholder="Enter Display name" #displayName required>
       </div>
 
       <div class="formGroup">
@@ -19,7 +27,12 @@
       </div>
 
       <div class="formGroup">
-        <input type="button" class="btn btnPrimary" value="Sign Up" (click)="authService.SignUp(userEmail.value, userPwd.value)">
+        <input type="text" class="formControl" placeholder="Role" #userRole required>
+      </div>
+      
+
+      <div class="formGroup">
+        <input type="button" class="btn btnPrimary" value="Sign Up" (click)="authService.SignUp(userEmail.value, userPwd.value)" class="redirect" routerLink="/verify-email-address">
       </div>
 
       <div class="formGroup">
@@ -37,7 +50,7 @@
     </div>
 
     <div class="redirectToLogin">
-      <span>Already have an account? <span class="redirect" routerLink="/sign-in">Log In</span></span>
+     <span>Already have an account? <span class="redirect" routerLink="/log-in">Log In</span></span>
     </div>
   </div>
 

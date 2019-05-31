@@ -2,9 +2,9 @@ export interface User {
    uid: string;
    email: string;
    displayName: string;
-   photoURL: string;
+   // photoURL: string;
    emailVerified: boolean;
-   roles: Roles;
+    roles: Roles; //how do i import it to be used by User
 }
 
 export interface Roles {
@@ -12,3 +12,5 @@ export interface Roles {
    Admin: boolean;
    Lecturer: boolean;
 }
+
+// it should help fetch data in user-profile component
